@@ -88,7 +88,7 @@ def main(args):
     gt_sub.unregister()
 
     if gt_robot_pose is None and args.initpose != None:
-        pp = argsinitpose.split()
+        pp = args.initpose.split()
         gt_robot_pose = [0,0,0]
         gt_robot_pose[0]=float(pp[0])
         gt_robot_pose[1]=float(pp[1])
@@ -120,7 +120,7 @@ if __name__=='__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("mapname", type=str, default="map",  nargs='?', help="Map name")                  
     parser.add_argument("-mapdir", type=str, default=None,   help="Map folder")
-    parser.add_argument("-initpose", type=str, default=None,                   
+    parser.add_argument("-initpose", type=str, default=None,
         help="Init pose in the form 'X Y Th_deg' (default: None)")
     parser.add_argument('--mapserveronly', default = False, action ='store_true', 
         help='Start only map_server node')
